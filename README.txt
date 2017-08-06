@@ -1,3 +1,6 @@
+This repository is an experiment in how to set up dot files so that I can get my
+linux configuration and running on any machine quickly.
+
 ####################
 # VIM Configurations
 ####################
@@ -25,6 +28,7 @@ sudo dnf install ctags
 sudo dnf install conda
 sudo dnf install fish
 sudo dnf install fedora-upgrade
+sudo dnf install gitk
 
 ######################
 # Python Configuration
