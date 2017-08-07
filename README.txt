@@ -3,7 +3,7 @@
 #
 # Run the following to initialize setup.
 # sudo dnf install curl
-# curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/README.txt
+# curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/README.txt | /bin/bash
 
 ################################
 # Install Linux packages via dnf
