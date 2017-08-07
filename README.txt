@@ -10,16 +10,12 @@
 ################################
 
 # sudo dnf install conda
-sudo dnf install fish
-y
-sudo dnf install fedora-upgrade
-y
-sudo dnf install gitk
-y
-sudo dnf install gvim
-y
-sudo dnf install vim
-y
+echo -e "response\ny" | sudo dnf install fish
+echo -e "response\ny" | sudo dnf install fedora-upgrade
+echo -e "response\ny" | sudo dnf install gitk
+echo -e "response\ny" | sudo dnf install gvim
+echo -e "response\ny" | sudo dnf install vim
+echo -e "response\ny" | sudo dnf install vim-enhanced
 
 #########################################################################
 # Automatically clone dot files, and place them in the appropriate places.
