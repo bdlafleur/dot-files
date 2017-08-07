@@ -10,20 +10,20 @@
 ################################
 
 # sudo dnf install conda
+
+echo -e "response\ny" | sudo dnf update
 echo -e "response\ny" | sudo dnf install fish
 echo -e "response\ny" | sudo dnf install fedora-upgrade
 echo -e "response\ny" | sudo dnf install gitk
 echo -e "response\ny" | sudo dnf install gvim
 echo -e "response\ny" | sudo dnf install vim
-echo -e "response\ny" | sudo dnf install vim-enhanced
+echo -e "response\ny" | sudo dnf install python
 
 #########################################################################
 # Automatically clone dot files, and place them in the appropriate places.
 
 git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
-function config {
-   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
-}
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
 mkdir -p .config-backup
 config checkout
 if [ $? = 0 ]; then
@@ -40,19 +40,18 @@ config config status.showUntrackedFiles no
 ###################
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl ~/.vim/autoload/pathogen.vim http://tpo.pe/pathogenvim
 curl -LSso ~/.vim/autoload/pathogen.vim http://tpo.pe/pathogen.vim
 
-git clone http://github.com/scrooloose/nerdtree.git ~/.vim/bundle
-git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle
-git clone https://github.com/bling/vim-airline ~/.vim/bundle
-git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle
+git clone http://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree/
+git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
+git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
+git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
 
 ######################
 # Python Configuration
 ######################
 
-pip install jupyter
-pip install yml
-pip install docx
-pip install ipython
+sudo pip --install upgrade
+sudo pip install jupyter
+sudo pip install yml
+sudo pip install docx
