@@ -9,12 +9,17 @@
 # Install Linux packages via dnf
 ################################
 
-sudo dnf install conda
+# sudo dnf install conda
 sudo dnf install fish
+y
 sudo dnf install fedora-upgrade
+y
 sudo dnf install gitk
+y
 sudo dnf install gvim
+y
 sudo dnf install vim
+y
 
 #########################################################################
 # Automatically clone dot files, and place them in the appropriate places.
