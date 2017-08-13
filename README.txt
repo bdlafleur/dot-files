@@ -10,6 +10,7 @@
 
 git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
+config config --global user.email "blafleur@umich.edu"
 mkdir -p .config-backup
 mv .bashrc .config-backup
 config checkout
@@ -49,3 +50,55 @@ sudo pip install --upgrade pip
 sudo pip install jupyter
 sudo pip install yml
 
+####################################
+####################################
+####################################
+#                                  #
+#                                  #
+# OpenMC installation instructions #
+#                                  #
+#                                  #
+####################################
+####################################
+####################################
+
+# Assuming I am in fish shell (for env var syntax)
+
+# 1) Download required packages for compliling/building
+#      echo -e "response\ny" | sudo dnf install gcc-gfortran
+#      echo -e "response\ny" | sudo dnf install gcc-c++
+#      echo -e "response\ny" | sudo dnf install cmake
+#      echo -e "response\ny" | sudo dnf install mpich
+#      echo -e "response\ny" | sudo dnf install mpich-devel
+#      sudo pip install h5py
+#      sudo pip install Cython
+#      sudo pip install pandas
+
+# 2) Download and congigure HDF5
+#    Go here: https://support.hdfgroup.org/HDF5/release/obtainsrc518.html#conf and download gzip file.
+#    gunzip < hdf5-1.8.19.tar.gz | tar xf -
+#      (Do next two lines only if --enable-parallel, which doesn't work yet)
+#         set -x FC /usr/lib64/mpich/bin/mpif90
+#         set -x CC /usr/lib64/mpich/bin/mpicc
+#    ./configure --prefix=/opt/hdf5/1.8.19 --enable-fortran --enable-fortran2003
+#    make
+#    make test
+#    sudo make install
+#    sudo make check-install
+
+# 3) Clone openmc and compile code
+#    git clone https://github.com/mit-crpg/openmc.git; cd openmc; git checkout master
+#    mkdir build; cd build
+#    set -x HDF5_ROOT /opt/hdf5/1.8.19
+#	mkdir -p build
+#	cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/opt/openmc
+#	sudo make -s -C build
+#    Go into build/cmake_install.cmake and change PYTHONPATH env variable to lib64
+#	sudo make -s -C build install
+
+# 4) Download Cross Sections and test the build
+#    cd scripts; python openmc-get-nndc-data
+#    make test
+
+# 5) Clone personal openmc repository
+#    git clone https://github.com/bdlafleur/openmc-projects

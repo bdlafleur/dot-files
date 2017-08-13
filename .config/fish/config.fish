@@ -1,4 +1,8 @@
 cd ~/
+
+set -x HDF5_ROOT /opt/hdf5/1.8.19
+set -x OPENMC_CROSS_SECTIONS /home/blafleur/Sources/openmc/scripts/nndc_hdf5/cross_sections.xml
+
 set normal (set_color normal)
 set magenta (set_color magenta)
 set yellow (set_color yellow)

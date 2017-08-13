@@ -15,4 +15,4 @@ export PATH="/home/blafleur/miniconda2/bin:$PATH"
 
 alias hm='cd ~/'
 alias update='source ~/.bashrc'
-alias config='/usr/bin/git --git-dir=/home/blafleur/.cfg/ --work-tree=/home/blafleur
+alias config='/usr/bin/git --git-dir=/home/blafleur/.cfg/ --work-tree=/home/blafleur'
