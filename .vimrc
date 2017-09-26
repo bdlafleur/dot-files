@@ -1,8 +1,7 @@
-execute pathogen#infect()
 syntax on
+colorscheme darkblue
 filetype plugin indent on
 
-colorscheme molokai
 let mapleader =","
 
 set autoindent
@@ -19,8 +18,12 @@ highlight ColorColumn ctermbg=gray
 
 set textwidth=80
 set colorcolumn=+1
-set wrap
+set nowrap
 set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set tw=0
 
 au FocusLost * :wa
 
@@ -45,6 +48,9 @@ inoremap <C-a> <esc>I
 inoremap <C-e> <esc>A
 noremap <C-a> ^
 noremap <C-e> $
+
+" Remove whitespace
+noremap <F5> :%s/\s\+$//e<CR>
 
 function! HiInterestingWord(n) " {{{
     " Save our location.
