@@ -29,6 +29,15 @@ echo -e "response\ny" | sudo dnf install vim
 echo -e "response\ny" | sudo dnf install python
 echo -e "response\ny" | sudo dnf install redhat-rpm-config
 echo -e "response\ny" | sudo dnf install python-devel
+echo -e "response\ny" | sudo dnf install terminator
+
+####################
+# Git Configurations
+####################
+curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+
+
 
 ###################
 # VIM Configuration
@@ -49,6 +58,7 @@ git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschem
 sudo pip install --upgrade pip
 sudo pip install jupyter
 sudo pip install yml
+sudo pip install tabulate
 
 ####################################
 ####################################
@@ -62,7 +72,7 @@ sudo pip install yml
 ####################################
 ####################################
 
-# Assuming I am in fish shell (for env var syntax)
+# *Assuming I am in fish shell*
 
 # 1) Download required packages for compliling/building
 #      echo -e "response\ny" | sudo dnf install gcc-gfortran
