@@ -29,7 +29,7 @@ echo -e "response\ny" | sudo dnf install vim
 echo -e "response\ny" | sudo dnf install python
 echo -e "response\ny" | sudo dnf install redhat-rpm-config
 echo -e "response\ny" | sudo dnf install python-devel
-echo -e "response\ny" | sudo dnf install terminator
+echo -e "response\ny" | sudo dnf install tmux
 
 ####################
 # Git Configurations
