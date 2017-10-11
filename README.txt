@@ -30,6 +30,8 @@ echo -e "response\ny" | sudo dnf install python
 echo -e "response\ny" | sudo dnf install redhat-rpm-config
 echo -e "response\ny" | sudo dnf install python-devel
 echo -e "response\ny" | sudo dnf install tmux
+echo -e "response\ny" | sudo dnf install anki
+echo -e "response\ny" | sudo dnf install keepass
 
 ####################
 # Git Configurations
