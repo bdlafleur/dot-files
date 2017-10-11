@@ -13,10 +13,17 @@ fi
 # added by Miniconda2 4.3.21 installer
 export PATH="/home/blafleur/miniconda2/bin:$PATH"
 
-alias hm='cd ~/'
+###########
+# Aliases #
+###########
+
 alias update='source ~/.bashrc'
 alias config='/usr/bin/git --git-dir=/home/blafleur/.cfg/ --work-tree=/home/blafleur'
 alias l='ls -ltr'
+alias tre='tree -shC -L 3'
+
+# Pretty git log print in terminal
+alias gl='git log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
@@ -120,3 +127,4 @@ else \
   # @2 - Prompt when not in GIT repo
   echo " '$Yellow$PathShort$Color_Off'\$ "; \
 fi)'
+
