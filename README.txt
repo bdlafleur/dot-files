@@ -32,6 +32,7 @@ echo -e "response\ny" | sudo dnf install python-devel
 echo -e "response\ny" | sudo dnf install tmux
 echo -e "response\ny" | sudo dnf install anki
 echo -e "response\ny" | sudo dnf install keepass
+echo -e "response\ny" | sudo dnf install meld
 
 ####################
 # Git Configurations
@@ -52,6 +53,7 @@ git clone http://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree/
 git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
 git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
 git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
+git clone https://github.com/christoomey/vim-tmux-navigator ~/.vim/bundle/vim-tmux-navigator/
 
 ######################
 # Python Configuration
