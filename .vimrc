@@ -34,6 +34,9 @@ au FocusLost * :wa
 map <F8> :TagbarToggle<CR>
 map <F7> :NERDTreeToggle<CR>
 
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
 " For window switching within tmux.
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>

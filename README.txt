@@ -13,6 +13,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
 config config --global user.email "blafleur@umich.edu"
 mkdir -p .config-backup
 mv .bashrc .config-backup
+mv .vimrc .config-backup
+mv .tmux.conf .config-backup
 config checkout
 config config status.showUntrackedFiles no
 
@@ -33,6 +35,8 @@ echo -e "response\ny" | sudo dnf install tmux
 echo -e "response\ny" | sudo dnf install anki
 echo -e "response\ny" | sudo dnf install keepass
 echo -e "response\ny" | sudo dnf install meld
+echo -e "response\ny" | sudo dnf install htop
+echo -e "response\ny" | sudo dnf install sl
 
 ####################
 # Git Configurations

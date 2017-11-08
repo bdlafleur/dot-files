@@ -13,6 +13,9 @@ fi
 # added by Miniconda2 4.3.21 installer
 export PATH="/home/blafleur/miniconda2/bin:$PATH"
 
+# Set default shell editor
+export EDITOR='vim'
+
 ###########
 # Aliases #
 ###########
