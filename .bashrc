@@ -21,7 +21,7 @@ export EDITOR='vim'
 ###########
 
 alias update='source ~/.bashrc'
-alias config='/usr/bin/git --git-dir=/home/blafleur/.cfg/ --work-tree=/home/blafleur'
+alias config='/usr/bin/git --git-dir="$HOME"/.cfg/ --work-tree="$HOME"'
 alias l='ls -ltr'
 alias tre='tree -shC -L 3'
 
