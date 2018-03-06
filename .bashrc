@@ -27,6 +27,7 @@ alias tre='tree -shC -L 3'
 
 # Pretty git log print in terminal
 alias gl='git log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
+alias cl='config log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
