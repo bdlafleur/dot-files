@@ -1,5 +1,5 @@
 # This repository is an experiment in how to set up dot files so that I can get my
-# linux configuration and running on any machine quickly.
+# linux configuration up and running on any machine quickly.
 #
 # Run the following to initialize setup.
 # sudo dnf install curl
@@ -40,6 +40,9 @@ echo -e "response\ny" | sudo dnf install sl
 echo -e "response\ny" | sudo dnf install pylint
 echo -e "response\ny" | sudo dnf install ImageMagick
 echo -e "response\ny" | sudo dnf install python-yaml
+echo -e "response\ny" | sudo dnf install gcc
+echo -e "response\ny" | sudo dnf install chromium
+echo -e "response\ny" | sudo dnf install conda
 
 ####################
 # Git Configurations
@@ -72,6 +75,7 @@ sudo pip install --upgrade pip
 sudo pip install jupyter
 sudo pip install yml
 sudo pip install tabulate
+sudo pip install jupyterlab
 
 ####################################
 ####################################
