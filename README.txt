@@ -93,14 +93,14 @@ sudo pip install pymc3
 ####################################
 ####################################
 
-# *Assuming I am in fish shell*
-
 # 1) Download required packages for compliling/building
 #      echo -e "response\ny" | sudo dnf install gcc-gfortran
 #      echo -e "response\ny" | sudo dnf install gcc-c++
 #      echo -e "response\ny" | sudo dnf install cmake
 #      echo -e "response\ny" | sudo dnf install mpich
 #      echo -e "response\ny" | sudo dnf install mpich-devel
+#      echo -e "response\ny" | sudo dnf install libxml2-devel
+#      echo -e "response\ny" | sudo dnf install libxslt-devel
 #      sudo pip install h5py
 #      sudo pip install Cython
 #      sudo pip install pandas
@@ -112,24 +112,24 @@ sudo pip install pymc3
 #         set -x FC /usr/lib64/mpich/bin/mpif90
 #         set -x CC /usr/lib64/mpich/bin/mpicc
 #    cd hdf5-1.8.20/
-#    ./configure --prefix=/opt/hdf5/1.8.19 --enable-fortran --enable-fortran2003
+#    ./configure --prefix=/opt/hdf5/1.8.20 --enable-fortran --enable-fortran2003
 #    make
 #    make test
 #    sudo make install
 #    sudo make check-install
 
 # 3) Clone openmc and compile code
-#    git clone https://github.com/mit-crpg/openmc.git; cd openmc; git checkout master
-#    mkdir build; cd build
-#    set -x HDF5_ROOT /opt/hdf5/1.8.19
-#	mkdir -p build
-#	cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/opt/openmc
-#	sudo make -s -C build
-#    Go into build/cmake_install.cmake and change PYTHONPATH env variable to lib64
-#	sudo make -s -C build install
+#    git clone https://github.com/mit-crpg/openmc.git; cd openmc; git checkout v0.9.0; mkdir build
+#    export HDF5_ROOT='/opt/hdf5/1.8.20'
+#	   cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/opt/openmc/
+#    export PYTHONPATH='/opt/openmc/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg/'
+#	   sudo make -j 8 -s -C build
+#    ### Go into build/cmake_install.cmake and change PYTHONPATH env variable to lib64
+#    sudo mkdir -p /opt/openmc/lib64/puthon2.7/site-packages/
+#	   sudo make -s -C build install
 
 # 4) Download Cross Sections and test the build
-#    cd scripts; python openmc-get-nndc-data
+#    cd scripts; python openmc-get-nndc-data; cd ../
 #    make test
 
 # 5) Clone personal openmc repository
