@@ -76,6 +76,11 @@ sudo pip install jupyter
 sudo pip install yml
 sudo pip install tabulate
 sudo pip install jupyterlab
+sudo pip install numpy
+sudo pip install scipy
+sudo pip install matplotlib
+sudo pip install pandas
+sudo pip install pymc3
 
 ####################################
 ####################################
