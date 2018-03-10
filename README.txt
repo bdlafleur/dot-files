@@ -1,22 +1,21 @@
 # This repository is an experiment in how to set up dot files so that I can get my
 # linux configuration up and running on any machine quickly.
 #
-# Run the following to initialize setup.
-# sudo dnf install curl
+# Run these commands first:
+# Clone dot files, and place them in the appropriate places.
+# git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
+# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
+# config config --global user.email "blafleur@umich.edu"
+# mkdir -p .config-backup
+# mv .bashrc .config-backup
+# mv .vimrc .config-backup
+# mv .tmux.conf .config-backup
+# config checkout
+# config config status.showUntrackedFiles no
+#
+# Copy and paste into terminal the following to initialize setup.
 # curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/README.txt | /bin/bash
 
-#########################################################################
-# Automatically clone dot files, and place them in the appropriate places.
-
-git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
-config config --global user.email "blafleur@umich.edu"
-mkdir -p .config-backup
-mv .bashrc .config-backup
-mv .vimrc .config-backup
-mv .tmux.conf .config-backup
-config checkout
-config config status.showUntrackedFiles no
 
 #####################################
 # Install Base Linux Packages via dnf
@@ -107,11 +106,12 @@ sudo pip install pymc3
 #      sudo pip install pandas
 
 # 2) Download and congigure HDF5
-#    Go here: https://support.hdfgroup.org/HDF5/release/obtainsrc518.html#conf and download gzip file.
-#    gunzip < hdf5-1.8.19.tar.gz | tar xf -
+#    wget https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.20.tar.gz
+#    gunzip < hdf5-1.8.20.tar.gz | tar xf -
 #      (Do next two lines only if --enable-parallel, which doesn't work yet)
 #         set -x FC /usr/lib64/mpich/bin/mpif90
 #         set -x CC /usr/lib64/mpich/bin/mpicc
+#    cd hdf5-1.8.20/
 #    ./configure --prefix=/opt/hdf5/1.8.19 --enable-fortran --enable-fortran2003
 #    make
 #    make test
