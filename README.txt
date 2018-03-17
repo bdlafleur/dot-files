@@ -134,3 +134,46 @@ sudo pip install pymc3
 
 # 5) Clone personal openmc repository
 #    git clone https://github.com/bdlafleur/openmc-projects
+
+######################################
+######################################
+######################################
+#                                    #
+#                                    #
+# OpenFoam installation instructions #
+#                                    #
+#                                    #
+######################################
+######################################
+######################################
+
+##########################
+# Installing / configuring
+
+# sudo dnf update
+# curl -fsSL https://get.docker.com/ | sh
+# echo -e "response\ny" | sudo dnf install zypper
+# sudo zypper -n in docker
+# sudo systemctl start docker
+# sudo systemctl enable docker
+# sudo usermod -aG docker blafleur [[[ restart required after this step ]]]
+# sudo sh -c "wget http://dl.openfoam.org/docker/openfoam5-linux -O /usr/bin/openfoam5-linux"
+# sudo chmod 755 /usr/bin/openfoam5-linux
+
+###########################
+# Launching openfoam5-linux
+
+# mkdir -p $HOME/OpenFOAM/${USER}-5.0
+# cd $HOME/OpenFOAM/${USER}-5.0
+# openfoam5-linux
+
+#
+# Testing openfoam5-linux
+
+# mkdir -p $FOAM_RUN
+# cd $FOAM_RUN
+# cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
+# cd pitzDaily
+# blockMesh
+# simpleFoam
+# paraFoam
