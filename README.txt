@@ -80,6 +80,7 @@ sudo pip install scipy
 sudo pip install matplotlib
 sudo pip install pandas
 sudo pip install pymc3
+sudo pip install pyDOE
 
 ####################################
 ####################################
@@ -121,11 +122,11 @@ sudo pip install pymc3
 # 3) Clone openmc and compile code
 #    git clone https://github.com/mit-crpg/openmc.git; cd openmc; git checkout v0.9.0; mkdir build
 #    export HDF5_ROOT='/opt/hdf5/1.8.20'
-#	   cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/opt/openmc/
-#    export PYTHONPATH='/opt/openmc/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg/'
+#	   cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/opt/openmc/v0.9.0
+#    export PYTHONPATH='/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg/'
 #	   sudo make -j 8 -s -C build
 #    ### Go into build/cmake_install.cmake and change PYTHONPATH env variable to lib64
-#    sudo mkdir -p /opt/openmc/lib64/puthon2.7/site-packages/
+#    sudo mkdir -p /opt/openmc/v0.9.0/lib64/python2.7/site-packages/
 #	   sudo make -s -C build install
 
 # 4) Download Cross Sections and test the build
@@ -134,6 +135,10 @@ sudo pip install pymc3
 
 # 5) Clone personal openmc repository
 #    git clone https://github.com/bdlafleur/openmc-projects
+
+# 6) Change the openmc_exec parameter in executor.py
+# 7) Update the OPENMC_CROSS_SECTIONS environment variable.
+#    export OPENMC_CROSS_SECTIONS='/home/blafleur/repos/openmc/scripts/nndc_hdf5/cross_sections.xml'
 
 ######################################
 ######################################

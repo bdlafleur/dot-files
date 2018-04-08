@@ -12,9 +12,16 @@ fi
 
 # added by Miniconda2 4.3.21 installer
 export PATH="/home/blafleur/miniconda2/bin:$PATH"
+export PATH="/opt/openmc/v0.9.0/bin/openmc:$PATH"
 
 # Set default shell editor
 export EDITOR='vim'
+
+# Python path modifications
+export PYTHONPATH="/home/blafleur/Repos/openmc-projects/ModelMaker:$PYTHONPATH"
+
+# Added for openmc cross sections
+export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
 
 ###########
 # Aliases #
