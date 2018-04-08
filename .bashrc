@@ -17,11 +17,12 @@ export PATH="/opt/openmc/v0.9.0/bin/openmc:$PATH"
 # Set default shell editor
 export EDITOR='vim'
 
+# Set paths for openmc use
+export PYTHONPATH='/opt/openmc/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg'
+export OPENMC_CROSS_SECTIONS='/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml'
+
 # Python path modifications
 export PYTHONPATH="/home/blafleur/Repos/openmc-projects/ModelMaker:$PYTHONPATH"
-
-# Added for openmc cross sections
-export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
 
 ###########
 # Aliases #
