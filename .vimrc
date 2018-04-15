@@ -4,7 +4,6 @@ filetype plugin indent on
 syntax on
 syntax on
 colorscheme darkblue
-filetype plugin indent on
 
 let mapleader =","
 

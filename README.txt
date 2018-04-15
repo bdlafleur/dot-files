@@ -42,6 +42,7 @@ echo -e "response\ny" | sudo dnf install python-yaml
 echo -e "response\ny" | sudo dnf install gcc
 echo -e "response\ny" | sudo dnf install chromium
 echo -e "response\ny" | sudo dnf install conda
+echo -e "response\ny" | sudo dnf install rclone
 
 ####################
 # Git Configurations
@@ -182,3 +183,19 @@ sudo pip install pyDOE
 # blockMesh
 # simpleFoam
 # paraFoam
+
+######################
+######################
+######################
+#
+#
+# RClone Usage Guide #
+#
+#
+######################
+######################
+######################
+
+# rclone config (to configure and connect with gdrive)
+# rclone lsd gdrive:Utilities (to list the directories inside the drive)
+# rclone sync gdrive:Utilities ./Utilities -n (to sync ORDER MATTERS!!!!!!)
