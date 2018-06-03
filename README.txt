@@ -43,6 +43,7 @@ echo -e "response\ny" | sudo dnf install gcc
 echo -e "response\ny" | sudo dnf install chromium
 echo -e "response\ny" | sudo dnf install conda
 echo -e "response\ny" | sudo dnf install rclone
+echo -e "response\ny" | sudo dnf install vitables
 
 ####################
 # Git Configurations
@@ -82,6 +83,7 @@ sudo pip install matplotlib
 sudo pip install pandas
 sudo pip install pymc3
 sudo pip install pyDOE
+sudo pip install plotly
 
 ####################################
 ####################################
