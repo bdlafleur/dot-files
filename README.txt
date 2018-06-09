@@ -44,6 +44,10 @@ echo -e "response\ny" | sudo dnf install chromium
 echo -e "response\ny" | sudo dnf install conda
 echo -e "response\ny" | sudo dnf install rclone
 echo -e "response\ny" | sudo dnf install vitables
+echo -e "response\ny" | sudo dnf install boost
+echo -e "response\ny" | sudo dnf install boost-devel
+echo -e "response\ny" | sudo dnf install lapack-devel
+echo -e "response\ny" | sudo dnf install blas
 
 ####################
 # Git Configurations
@@ -84,6 +88,7 @@ sudo pip install pandas
 sudo pip install pymc3
 sudo pip install pyDOE
 sudo pip install plotly
+sudo pip install pyinstaller
 
 ####################################
 ####################################
