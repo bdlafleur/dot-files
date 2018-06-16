@@ -44,10 +44,21 @@ echo -e "response\ny" | sudo dnf install chromium
 echo -e "response\ny" | sudo dnf install conda
 echo -e "response\ny" | sudo dnf install rclone
 echo -e "response\ny" | sudo dnf install vitables
+
+# For dakota
 echo -e "response\ny" | sudo dnf install boost
 echo -e "response\ny" | sudo dnf install boost-devel
 echo -e "response\ny" | sudo dnf install lapack-devel
 echo -e "response\ny" | sudo dnf install blas
+
+# For openmc
+echo -e "response\ny" | sudo dnf install gcc-gfortran
+echo -e "response\ny" | sudo dnf install gcc-c++
+echo -e "response\ny" | sudo dnf install cmake
+echo -e "response\ny" | sudo dnf install mpich
+echo -e "response\ny" | sudo dnf install mpich-devel
+echo -e "response\ny" | sudo dnf install libxml2-devel
+echo -e "response\ny" | sudo dnf install libxslt-devel
 
 ####################
 # Git Configurations
@@ -72,6 +83,16 @@ git clone https://github.com/christoomey/vim-tmux-navigator ~/.vim/bundle/vim-tm
 git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 git clone git://github.com/JuliaEditorSupport/julia-vim.git ~/.vim/bundle/julia-vim
 
+###########################
+# Personal Git Repositories
+###########################
+
+git clone https://github.com/bdlafleur/openmc-projects ~/Repos/openmc-projects
+git clone https://github.com/bdlafleur/post-process ~/Repos/post-process
+git clone https://github.com/bdlafleur/statistical-inversion ~/Repos/statistical-inversion
+git clone https://github.com/bdlafleur/surrogate-modeling ~/Repos/surrogate-modeling
+git clone https://github.com/bdlafleur/ThinkBayes ~/Repos/ThinkBayes
+
 ######################
 # Python Configuration
 ######################
@@ -89,6 +110,8 @@ sudo pip install pymc3
 sudo pip install pyDOE
 sudo pip install plotly
 sudo pip install pyinstaller
+sudo pip install h5py
+sudo pip install Cython
 
 ####################################
 ####################################
@@ -102,34 +125,24 @@ sudo pip install pyinstaller
 ####################################
 ####################################
 
-# 1) Download required packages for compliling/building
-#      echo -e "response\ny" | sudo dnf install gcc-gfortran
-#      echo -e "response\ny" | sudo dnf install gcc-c++
-#      echo -e "response\ny" | sudo dnf install cmake
-#      echo -e "response\ny" | sudo dnf install mpich
-#      echo -e "response\ny" | sudo dnf install mpich-devel
-#      echo -e "response\ny" | sudo dnf install libxml2-devel
-#      echo -e "response\ny" | sudo dnf install libxslt-devel
-#      sudo pip install h5py
-#      sudo pip install Cython
-#      sudo pip install pandas
+# 1) Download required packages for compliling/building (included above)
 
-# 2) Download and congigure HDF5
-#    wget https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.20.tar.gz
-#    gunzip < hdf5-1.8.20.tar.gz | tar xf -
+# 2) Download and congigure HDF5 (do in /opt/)
+#    wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.2/src/hdf5-1.10.2.tar.gz
+#    sudo tar -xzvf hdf5-1.10.2.tar.gz
 #      (Do next two lines only if --enable-parallel, which doesn't work yet)
 #         set -x FC /usr/lib64/mpich/bin/mpif90
 #         set -x CC /usr/lib64/mpich/bin/mpicc
-#    cd hdf5-1.8.20/
-#    ./configure --prefix=/opt/hdf5/1.8.20 --enable-fortran --enable-fortran2003
-#    make
-#    make test
+#    cd hdf5-1.10.2/
+#    sudo ./configure --prefix=/opt/hdf5/1.10.2 --enable-fortran --enable-fortran2003
+#    sudo make -j 8
+#    sudo make test
 #    sudo make install
 #    sudo make check-install
 
 # 3) Clone openmc and compile code
 #    git clone https://github.com/mit-crpg/openmc.git; cd openmc; git checkout v0.9.0; mkdir build
-#    export HDF5_ROOT='/opt/hdf5/1.8.20'
+#    export HDF5_ROOT='/opt/hdf5/1.10.2'
 #	   cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/opt/openmc/v0.9.0
 #    export PYTHONPATH='/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg/'
 #	   sudo make -j 8 -s -C build
@@ -141,12 +154,9 @@ sudo pip install pyinstaller
 #    cd scripts; python openmc-get-nndc-data; cd ../
 #    make test
 
-# 5) Clone personal openmc repository
-#    git clone https://github.com/bdlafleur/openmc-projects
-
 # 6) Change the openmc_exec parameter in executor.py
 # 7) Update the OPENMC_CROSS_SECTIONS environment variable.
-#    export OPENMC_CROSS_SECTIONS='/home/blafleur/repos/openmc/scripts/nndc_hdf5/cross_sections.xml'
+#    export OPENMC_CROSS_SECTIONS='/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml'
 
 ######################################
 ######################################

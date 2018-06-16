@@ -12,17 +12,21 @@ fi
 
 # added by Miniconda2 4.3.21 installer
 export PATH="/home/blafleur/miniconda2/bin:$PATH"
-export PATH="/opt/openmc/v0.9.0/bin/openmc:$PATH"
 
 # Set default shell editor
 export EDITOR='vim'
 
-# Set paths for openmc use
-export PYTHONPATH='/opt/openmc/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg'
-export OPENMC_CROSS_SECTIONS='/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml'
+# Set path env variables.
+export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
+
+export PYTHONPATH="/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg"
+export PYTHONPATH="/opt/dakota/6.8/share/dakota/python/:$PYTHONPATH"
+export PYTHONPATH="/home/blafleur/Repos/openmc-projects/ModelMaker:$PYTHONPATH"
+
+export PATH="/opt/openmc/v0.9.0/bin/:$PATH"
+export PATH="/opt/dakota/6.8/bin/:/opt/dakota/6.8/share/dakota/test/:$PATH"
 
 # Python path modifications
-export PYTHONPATH="/home/blafleur/Repos/openmc-projects/ModelMaker:$PYTHONPATH"
 
 ###########
 # Aliases #
@@ -36,6 +40,9 @@ alias tre='tree -shC -L 3'
 # Pretty git log print in terminal
 alias gl='git log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 alias cl='config log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
+
+# Servers to connect with
+alias ners-12='ssh 141.212.172.88'
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
