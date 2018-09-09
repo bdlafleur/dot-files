@@ -71,6 +71,7 @@ git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschem
 git clone https://github.com/christoomey/vim-tmux-navigator ~/.vim/bundle/vim-tmux-navigator/
 git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 git clone git://github.com/JuliaEditorSupport/julia-vim.git ~/.vim/bundle/julia-vim
+git clone https://github.com/PredictiveScienceLab/uq-course.git
 
 ######################
 # Python Configuration
