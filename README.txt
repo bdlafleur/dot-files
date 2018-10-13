@@ -63,8 +63,6 @@ echo -e "response\ny" | sudo dnf install libxslt-devel
 curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
-
-
 ###################
 # VIM Configuration
 ###################
@@ -77,7 +75,6 @@ git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
 git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
 git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
 git clone https://github.com/christoomey/vim-tmux-navigator ~/.vim/bundle/vim-tmux-navigator/
-git clone https://github.com/bdlafleur/uq-course.git
 
 ###########################
 # Personal Git Repositories
@@ -87,8 +84,11 @@ git clone https://github.com/bdlafleur/openmc-projects ~/Repos/openmc-projects
 git clone https://github.com/bdlafleur/post-process ~/Repos/post-process
 git clone https://github.com/bdlafleur/statistical-inversion ~/Repos/statistical-inversion
 git clone https://github.com/bdlafleur/surrogate-modeling ~/Repos/surrogate-modeling
-git clone https://github.com/bdlafleur/ThinkBayes ~/Repos/ThinkBayes
-git clone https://github.com/bdlafleur/ThinkBayes ~/Repos/dakota-workspace
+git clone https://github.com/bdlafleur/dakota-workspace ~/Repos/dakota-workspace
+git clone https://github.com/bdlafleur/uq-course.git
+
+# Other's repos worth having
+git clone https://github.com/fboender/multi-git-status.git
 
 ######################
 # Python Configuration
