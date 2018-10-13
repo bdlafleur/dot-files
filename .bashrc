@@ -22,6 +22,7 @@ export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cros
 export PYTHONPATH="/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg"
 export PYTHONPATH="/opt/dakota/6.8/share/dakota/python/:$PYTHONPATH"
 export PYTHONPATH="/home/blafleur/Repos/openmc-projects/ModelMaker:$PYTHONPATH"
+export PYTHONPATH="/home/blafleur/Repos/post-process/:$PYTHONPATH"
 
 export PATH="/opt/openmc/v0.9.0/bin/:$PATH"
 export PATH="/opt/dakota/6.8/bin/:/opt/dakota/6.8/share/dakota/test/:$PATH"
@@ -43,6 +44,41 @@ alias cl='config log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yell
 
 # Servers to connect with
 alias ners-12='ssh 141.212.172.88'
+
+###############
+# tmux sessions
+###############
+
+work() {
+    session="phd"
+    tmux start-server
+    tmux new-session -d -s $session
+
+    # Split up all the panes.
+    tmux splitw -h -p 85
+    tmux splitw -v -p 10
+    tmux select-pane -t 0
+    tmux splitw -v -p 70
+
+    # Startup each pane's purpose
+    tmux select-pane -t 0
+    tmux send-keys "htop" C-m
+
+    tmux select-pane -t 1
+    tmux send-keys "cd ~/Repos/$1" C-m
+    tmux send-keys "ipython" C-m
+
+    tmux select-pane -t 2
+    tmux send-keys "cd ~/Repos/$1" C-m
+    tmux send-keys "ls" C-m
+
+    tmux select-pane -t 3
+    tmux send-keys "cd ~/Repos/$1" C-m
+    tmux send-keys "git status" C-m
+
+    # Attach to session
+    tmux attach -t $session
+}
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset

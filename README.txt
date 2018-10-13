@@ -22,13 +22,11 @@
 #####################################
 
 echo -e "response\ny" | sudo dnf update
-echo -e "response\ny" | sudo dnf install fish
 echo -e "response\ny" | sudo dnf install fedora-upgrade
 echo -e "response\ny" | sudo dnf install gitk
 echo -e "response\ny" | sudo dnf install gvim
 echo -e "response\ny" | sudo dnf install vim
 echo -e "response\ny" | sudo dnf install python
-echo -e "response\ny" | sudo dnf install redhat-rpm-config
 echo -e "response\ny" | sudo dnf install python-devel
 echo -e "response\ny" | sudo dnf install tmux
 echo -e "response\ny" | sudo dnf install anki
@@ -37,7 +35,6 @@ echo -e "response\ny" | sudo dnf install meld
 echo -e "response\ny" | sudo dnf install htop
 echo -e "response\ny" | sudo dnf install sl
 echo -e "response\ny" | sudo dnf install pylint
-echo -e "response\ny" | sudo dnf install ImageMagick
 echo -e "response\ny" | sudo dnf install python-yaml
 echo -e "response\ny" | sudo dnf install gcc
 echo -e "response\ny" | sudo dnf install chromium
@@ -80,8 +77,6 @@ git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
 git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
 git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
 git clone https://github.com/christoomey/vim-tmux-navigator ~/.vim/bundle/vim-tmux-navigator/
-git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
-git clone git://github.com/JuliaEditorSupport/julia-vim.git ~/.vim/bundle/julia-vim
 
 ###########################
 # Personal Git Repositories
@@ -92,6 +87,7 @@ git clone https://github.com/bdlafleur/post-process ~/Repos/post-process
 git clone https://github.com/bdlafleur/statistical-inversion ~/Repos/statistical-inversion
 git clone https://github.com/bdlafleur/surrogate-modeling ~/Repos/surrogate-modeling
 git clone https://github.com/bdlafleur/ThinkBayes ~/Repos/ThinkBayes
+git clone https://github.com/bdlafleur/ThinkBayes ~/Repos/dakota-workspace
 
 ######################
 # Python Configuration
@@ -216,3 +212,4 @@ sudo pip install Cython
 # rclone config (to configure and connect with gdrive)
 # rclone lsd gdrive:Utilities (to list the directories inside the drive)
 # rclone sync gdrive:Utilities ./Utilities -n (to sync ORDER MATTERS!!!!!!)
+# rclone sync gdrive:Education/'UofM PhD'/Reports ./Education/'UofM PhD'/Reports
