@@ -109,6 +109,7 @@ sudo pip install plotly
 sudo pip install pyinstaller
 sudo pip install h5py
 sudo pip install Cython
+sudo pip install chaospy
 
 ####################################
 ####################################
