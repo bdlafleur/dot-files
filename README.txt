@@ -41,6 +41,8 @@ echo -e "response\ny" | sudo dnf install chromium
 echo -e "response\ny" | sudo dnf install conda
 echo -e "response\ny" | sudo dnf install rclone
 echo -e "response\ny" | sudo dnf install vitables
+echo -e "response\ny" | sudo dnf install graphviz
+echo -e "response\ny" | sudo dnf install graphviz-devel
 
 # For dakota
 echo -e "response\ny" | sudo dnf install boost
@@ -110,6 +112,7 @@ sudo pip install pyinstaller
 sudo pip install h5py
 sudo pip install Cython
 sudo pip install chaospy
+sudo pip install pygraphviz
 
 ####################################
 ####################################
