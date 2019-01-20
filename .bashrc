@@ -18,6 +18,7 @@ export EDITOR='vim'
 
 # Set path env variables.
 export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
+export MPACT_DATA="~/mpact/MPACT_Extras/xslibs/mpact51g_71_4.3m2_03262018.fmt"
 
 export PYTHONPATH="/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg"
 export PYTHONPATH="/opt/dakota/6.8/share/dakota/python/:$PYTHONPATH"
