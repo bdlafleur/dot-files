@@ -202,6 +202,24 @@ sudo pip install pygraphviz
 # simpleFoam
 # paraFoam
 
+#####################
+#####################
+#####################
+#
+#
+# MPACT Usage Guide #
+#
+#
+#####################
+#####################
+#####################
+
+# INSTALL INSTRUCTIONS COMING AT A LATER DATE!!!
+
+# Additional Repositories Needed:
+# git clone git@ners-arc-05.engin.umich.edu:CASL/VERAInExt.git
+# git clone git@ners-arc-05.engin.umich.edu:MPACT/MPACT_Extras.git
+
 ######################
 ######################
 ######################
