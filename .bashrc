@@ -13,11 +13,15 @@ fi
 # added by Miniconda2 4.3.21 installer
 export PATH="/home/blafleur/miniconda2/bin:$PATH"
 
+# Added for mpact usage
+
 # Set default shell editor
 export EDITOR='vim'
 
-# Set path env variables.
+# Set path for openmc
 export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
+
+# Set path for mpact
 export MPACT_DATA="~/mpact/MPACT_Extras/xslibs/mpact51g_71_4.3m2_03262018.fmt"
 
 export PYTHONPATH="/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg"
