@@ -15,6 +15,7 @@ export PATH="/home/blafleur/miniconda2/bin:$PATH"
 export PATH="/home/scratch/blafleur/repos/mpact-projects/MpactTools/:$PATH"
 
 # Added for mpact usage
+export MODULEPATH="/home/scratch/blafleur/opt/mpact-dev-tools/env/:$MODULEPATH"
 
 # Set default shell editor
 export EDITOR='vim'
