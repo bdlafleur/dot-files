@@ -218,3 +218,4 @@ sudo pip install pygraphviz
 # rclone lsd gdrive:Utilities (to list the directories inside the drive)
 # rclone sync gdrive:Utilities ./Utilities -n (to sync ORDER MATTERS!!!!!!)
 # rclone sync gdrive:Education/'UofM PhD'/Reports ./Education/'UofM PhD'/Reports
+# rclone ls gdrive:Education/UofM\ Undergraduate\ 09-13/2012-2013\ Senior/Fall\ Semester/NERS\ 441/ ./Education/UofM\ Undergraduate\ 09-13/2012-2013\ Senior/Fall\ Semester/NERS\ 441/
