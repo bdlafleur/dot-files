@@ -77,6 +77,7 @@ git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
 git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
 git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
 git clone https://github.com/christoomey/vim-tmux-navigator ~/.vim/bundle/vim-tmux-navigator/
+git clone https://github.com/mathLab/RBniCS.git
 
 ###########################
 # Personal Git Repositories
@@ -201,6 +202,24 @@ sudo pip install pygraphviz
 # blockMesh
 # simpleFoam
 # paraFoam
+
+#####################
+#####################
+#####################
+#
+#
+# MPACT Usage Guide #
+#
+#
+#####################
+#####################
+#####################
+
+# INSTALL INSTRUCTIONS COMING AT A LATER DATE!!!
+
+# Additional Repositories Needed:
+# git clone git@ners-arc-05.engin.umich.edu:CASL/VERAInExt.git
+# git clone git@ners-arc-05.engin.umich.edu:MPACT/MPACT_Extras.git
 
 ######################
 ######################

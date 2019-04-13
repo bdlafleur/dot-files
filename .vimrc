@@ -75,3 +75,8 @@ cnoremap <C-a> <home>
 cnoremap <C-e> <end>
 
 nnoremap <leader>V V']
+
+" Added for vera auto completion
+so /home/blafleur_local/.vim/scripts.vim
+so /home/blafleur_local/.vim/ftplugin/verainput.vim
+so /home/blafleur_local/.vim/autoload/verainputcomplete.vim
