@@ -16,6 +16,9 @@
 # Copy and paste into terminal the following to initialize setup.
 # curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/README.txt | /bin/bash
 
+# List of things to install on new machine.
+# flake8
+
 
 #####################################
 # Install Base Linux Packages via dnf
