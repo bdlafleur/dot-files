@@ -76,8 +76,7 @@ git clone http://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree/
 git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
 git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
 git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
-git clone https://github.com/christoomey/vim-tmux-navigator ~/.vim/bundle/vim-tmux-navigator/
-git clone https://github.com/mathLab/RBniCS.git
+git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
 
 ###########################
 # Personal Git Repositories
