@@ -1,5 +1,5 @@
 # Copy and paste to initialize Schenectady Labs.
-# curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/.setup.sh | /bin/bash
+# curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/.setup.sh | /bin/bash 2>&1 | tee .setup_output.txt
 
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "                    Set Up Dot Files                     "
@@ -48,6 +48,13 @@ git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-sta
 cd ~/repos/multi-git-status
 sudo ./install.sh
 cd
+
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "                  Configure Anaconda                     "
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+curl -O https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+/bin/bash Anaconda3-2019.10-Linux-x86_64.sh
 
 ######################
 # RClone Usage Guide #

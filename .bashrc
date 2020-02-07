@@ -40,6 +40,7 @@ WHITE='\[\033[1;37m\]'
 YELLOW="\[\033[1;33m\]"
 
 function color_my_prompt {
+  local __env="$GREEN($CONDA_DEFAULT_ENV)"
   local __date_and_time="$PURPLE[\d - \T]"
   local __user_and_host="$GREY\u@\h"
   local __cur_location="$YELLOW\w"           # capital 'W': current directory, small 'w': full file path
@@ -60,7 +61,7 @@ function color_my_prompt {
   fi
 
   # Build the PS1 (Prompt String)
-  PS1="$__date_and_time $__user_and_host $__cur_location$__git_branch_color$__git_branch $__prompt_tail$__user_input_color "
+  PS1="$__env $__date_and_time $__user_and_host $__cur_location$__git_branch_color$__git_branch $__prompt_tail$__user_input_color "
 }
 
 # configure PROMPT_COMMAND which is executed each time before PS1
@@ -91,3 +92,19 @@ function repostat {
     cd - 2>&1 > /dev/null
 }
 repostat
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/blafleur/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/blafleur/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/blafleur/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/blafleur/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
