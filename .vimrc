@@ -5,6 +5,8 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
+"syntax enable
+
 " For flake8'ing my python files.
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']

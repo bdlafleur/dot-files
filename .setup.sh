@@ -47,6 +47,7 @@ git clone https://github.com/bdlafleur/surrogate-modeling ~/repos/surrogate-mode
 git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-status
 cd ~/repos/multi-git-status
 sudo ./install.sh
+cd
 
 ######################
 # RClone Usage Guide #
@@ -63,9 +64,10 @@ sudo ./install.sh
 ##############
 
 # List of required packages to install on new machine:
-# flake8
+# ctags
 
 # List of machines I know.
 # ners-am-08: 141.212.172.88
 # ners-am-12: 141.212.172.92
 
+source ~/.bashrc
