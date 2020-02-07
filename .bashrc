@@ -1,41 +1,19 @@
-# .bashrc
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-
-# added by Miniconda2 4.3.21 installer
-export PATH="/home/blafleur/miniconda2/bin:$PATH"
-export PATH="/home/scratch/blafleur/repos/mpact-projects/MpactTools/:$PATH"
-
-# Added for mpact usage
-export MODULEPATH="/home/scratch/blafleur/opt/mpact-dev-tools/env/:$MODULEPATH"
+#########################
+# ENVIRONMENT VARIABLES #
+#########################
 
 # Set default shell editor
 export EDITOR='vim'
-
-# Set path for openmc
-export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
-
-# Set path for mpact
+export MODULEPATH="/home/scratch/blafleur/opt/mpact-dev-tools/env/:$MODULEPATH"
 export MPACT_DATA="~/mpact/MPACT_Extras/xslibs/mpact51g_71_4.3m2_03262018.fmt"
-
-export PYTHONPATH="/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg"
-export PYTHONPATH="/opt/dakota/6.8/share/dakota/python/:$PYTHONPATH"
-export PYTHONPATH="/home/scratch/blafleur/repos/openmc-projects/ModelMaker:$PYTHONPATH"
-export PYTHONPATH="/home/scratch/blafleur/repos/post-process/:$PYTHONPATH"
-export PYTHONPATH="/home/scratch/blafleur/repos/mpact-projects/MpactTools/:$PYTHONPATH"
-
+export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
 export PATH="/opt/openmc/v0.9.0/bin/:$PATH"
 export PATH="/opt/dakota/6.8/bin/:/opt/dakota/6.8/share/dakota/test/:$PATH"
-
-# Python path modifications
 
 ###########
 # Aliases #
@@ -44,14 +22,11 @@ export PATH="/opt/dakota/6.8/bin/:/opt/dakota/6.8/share/dakota/test/:$PATH"
 alias update='source ~/.bashrc'
 alias config='/usr/bin/git --git-dir="$HOME"/.cfg/ --work-tree="$HOME"'
 alias l='ls -ltr'
-alias tre='tree -shC -L 3'
+alias tre='tree -shC -L 2'
 
 # Pretty git log print in terminal
 alias gl='git log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 alias cl='config log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
-
-# Servers to connect with
-alias ners-12='ssh 141.212.172.88'
 
 ###############
 # tmux sessions

@@ -19,6 +19,10 @@
 # List of things to install on new machine.
 # flake8
 
+# List of machines I know.
+ners-am-08: 141.212.172.88
+ners-am-12: 141.212.172.92
+
 
 #####################################
 # Install Base Linux Packages via dnf
