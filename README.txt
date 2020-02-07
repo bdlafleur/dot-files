@@ -2,7 +2,7 @@
 # curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/README.txt | /bin/bash
 
 ###################
-# Setup dot files #
+# Setup Dot Files #
 ###################
 # Clone dot files, and place them in the appropriate places.
 git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
@@ -12,19 +12,20 @@ mkdir -p .config-backup
 mv .bashrc .config-backup
 mv .vimrc .config-backup
 mv .tmux.conf .config-backup
+mv .gitconfig .config-backup
 config checkout
 config config status.showUntrackedFiles no
 
-# List of things to install on new machine.
+# List of required packages to install on new machine:
 # flake8
 
 # List of machines I know.
 # ners-am-08: 141.212.172.88
 # ners-am-12: 141.212.172.92
 
-####################
-# Git Configurations
-####################
+########################
+# Retrieve Git Scripts #
+########################
 curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
@@ -40,17 +41,21 @@ git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
 git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
 git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
 git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
+git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 
 ###########################
 # Personal Git Repositories
 ###########################
 
+git clone https://github.com/bdlafleur/dakota-workspace ~/repos/dakota-workspace
+git clone https://github.com/bdlafleur/forward-prop.git ~/repos/forward-prop
+git clone https://github.com/bdlafleur/mpact-projects.git ~/repos/mpact-projects
+git clone https://github.com/bdlafleur/neural-networking.git ~/repos/neural-networking
 git clone https://github.com/bdlafleur/openmc-projects ~/repos/openmc-projects
 git clone https://github.com/bdlafleur/post-process ~/repos/post-process
+git clone https://github.com/bdlafleur/reduced-order-modeling.git ~/repos/reduced-order-modeling
 git clone https://github.com/bdlafleur/statistical-inversion ~/repos/statistical-inversion
 git clone https://github.com/bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
-git clone https://github.com/bdlafleur/dakota-workspace ~/repos/dakota-workspace
-git clone https://github.com/bdlafleur/uq-course.git ~/repos/uq-course.git
 
 # Other's repos worth having
 git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-status.git

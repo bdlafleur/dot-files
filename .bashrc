@@ -85,7 +85,7 @@ fi
 # Run mgitstatus and config status to see how all repos are doing.
 function repostat {
     cd
-    mgitstatus
+    mgitstatus -f
     [[ -z $(config status -s) ]] || printf "Config directory: \033[1;31mDirty\033[0m\n"
     [[ -n $(config status -s) ]] || printf "Config directory: \033[1;32mOk\033[0m\n"
     cd - 2>&1 > /dev/null

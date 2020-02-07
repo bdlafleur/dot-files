@@ -59,9 +59,6 @@ noremap <C-down> 5<C-w>-
 map <S-k> :bp<CR>
 map <S-j> :bn<CR>
 
-" Remove whitespace
-noremap <F5> :%s/\s\+$//e<CR>
-
 " Add for vera auto completion
 "so /home/blafleur/.vim/scripts.vim
 "so /home/blafleur/.vim/ftplugin/verainput.vim
