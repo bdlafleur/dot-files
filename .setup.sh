@@ -1,37 +1,23 @@
-# Copy and paste into terminal the following to initialize setup.
-# curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/README.txt | /bin/bash
+# Copy and paste to initialize Schenectady Labs.
+# curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/.setup.sh | /bin/bash
 
-###################
-# Setup Dot Files #
-###################
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "                    Set Up Dot Files                     "
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
 # Clone dot files, and place them in the appropriate places.
 git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
-config config --global user.email "blafleur@umich.edu"
-mkdir -p .config-backup
-mv .bashrc .config-backup
-mv .vimrc .config-backup
-mv .tmux.conf .config-backup
-mv .gitconfig .config-backup
-config checkout
-config config status.showUntrackedFiles no
+mkdir -p .config_backup
+[ -f .bashrc ] && mv .bashrc .config_backup
+[ -f .vimrc ] && mv .vimrc .config_backup
+[ -f .tmux.conf ] && mv .tmux.conf .config_backup
+[ -f .gitconfig ] && mv .gitconfig .config_backup
+/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@ checkout
+/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@ config status.showUntrackedFiles no
 
-# List of required packages to install on new machine:
-# flake8
-
-# List of machines I know.
-# ners-am-08: 141.212.172.88
-# ners-am-12: 141.212.172.92
-
-########################
-# Retrieve Git Scripts #
-########################
-curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-
-###################
-# VIM Configuration
-###################
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "                 Configure Vim Pluggins                  "
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim http://tpo.pe/pathogen.vim
@@ -43,9 +29,9 @@ git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschem
 git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
 git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 
-###########################
-# Personal Git Repositories
-###########################
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "              Clone Project Repositories                 "
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 git clone https://github.com/bdlafleur/dakota-workspace ~/repos/dakota-workspace
 git clone https://github.com/bdlafleur/forward-prop.git ~/repos/forward-prop
@@ -58,18 +44,12 @@ git clone https://github.com/bdlafleur/statistical-inversion ~/repos/statistical
 git clone https://github.com/bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
 
 # Other's repos worth having
-git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-status.git
+git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-status
+cd ~/repos/multi-git-status
+sudo ./install.sh
 
 ######################
-######################
-######################
-#
-#
 # RClone Usage Guide #
-#
-#
-######################
-######################
 ######################
 
 # rclone config (to configure and connect with gdrive)
@@ -77,3 +57,15 @@ git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-sta
 # rclone sync gdrive:Utilities ./Utilities -n (to sync ORDER MATTERS!!!!!!)
 # rclone sync gdrive:Education/'UofM PhD'/Reports ./Education/'UofM PhD'/Reports
 # rclone ls gdrive:Education/UofM\ Undergraduate\ 09-13/2012-2013\ Senior/Fall\ Semester/NERS\ 441/ ./Education/UofM\ Undergraduate\ 09-13/2012-2013\ Senior/Fall\ Semester/NERS\ 441/
+
+##############
+# Misc Notes #
+##############
+
+# List of required packages to install on new machine:
+# flake8
+
+# List of machines I know.
+# ners-am-08: 141.212.172.88
+# ners-am-12: 141.212.172.92
+
