@@ -28,41 +28,6 @@ alias tre='tree -shC -L 2'
 alias gl='git log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 alias cl='config log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 
-###############
-# tmux sessions
-###############
-
-work() {
-    session="phd"
-    tmux start-server
-    tmux new-session -d -s $session
-
-    # Split up all the panes.
-    tmux splitw -h -p 85
-    tmux splitw -v -p 10
-    tmux select-pane -t 0
-    tmux splitw -v -p 70
-
-    # Startup each pane's purpose
-    tmux select-pane -t 0
-    tmux send-keys "htop" C-m
-
-    tmux select-pane -t 1
-    tmux send-keys "cd ~/Repos/$1" C-m
-    tmux send-keys "ipython" C-m
-
-    tmux select-pane -t 2
-    tmux send-keys "cd ~/Repos/$1" C-m
-    tmux send-keys "ls" C-m
-
-    tmux select-pane -t 3
-    tmux send-keys "cd ~/Repos/$1" C-m
-    tmux send-keys "git status" C-m
-
-    # Attach to session
-    tmux attach -t $session
-}
-
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
 
