@@ -1,70 +1,26 @@
-# This repository is an experiment in how to set up dot files so that I can get my
-# linux configuration up and running on any machine quickly.
-#
-# Run these commands first:
-# Clone dot files, and place them in the appropriate places.
-# git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
-# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
-# config config --global user.email "blafleur@umich.edu"
-# mkdir -p .config-backup
-# mv .bashrc .config-backup
-# mv .vimrc .config-backup
-# mv .tmux.conf .config-backup
-# config checkout
-# config config status.showUntrackedFiles no
-#
 # Copy and paste into terminal the following to initialize setup.
 # curl -Lk https://raw.githubusercontent.com/bdlafleur/dot-files/master/README.txt | /bin/bash
+
+###################
+# Setup dot files #
+###################
+# Clone dot files, and place them in the appropriate places.
+git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@'
+config config --global user.email "blafleur@umich.edu"
+mkdir -p .config-backup
+mv .bashrc .config-backup
+mv .vimrc .config-backup
+mv .tmux.conf .config-backup
+config checkout
+config config status.showUntrackedFiles no
 
 # List of things to install on new machine.
 # flake8
 
 # List of machines I know.
-ners-am-08: 141.212.172.88
-ners-am-12: 141.212.172.92
-
-
-#####################################
-# Install Base Linux Packages via dnf
-#####################################
-
-echo -e "response\ny" | sudo dnf update
-echo -e "response\ny" | sudo dnf install fedora-upgrade
-echo -e "response\ny" | sudo dnf install gitk
-echo -e "response\ny" | sudo dnf install gvim
-echo -e "response\ny" | sudo dnf install vim
-echo -e "response\ny" | sudo dnf install python
-echo -e "response\ny" | sudo dnf install python-devel
-echo -e "response\ny" | sudo dnf install tmux
-echo -e "response\ny" | sudo dnf install anki
-echo -e "response\ny" | sudo dnf install keepass
-echo -e "response\ny" | sudo dnf install meld
-echo -e "response\ny" | sudo dnf install htop
-echo -e "response\ny" | sudo dnf install sl
-echo -e "response\ny" | sudo dnf install pylint
-echo -e "response\ny" | sudo dnf install python-yaml
-echo -e "response\ny" | sudo dnf install gcc
-echo -e "response\ny" | sudo dnf install chromium
-echo -e "response\ny" | sudo dnf install conda
-echo -e "response\ny" | sudo dnf install rclone
-echo -e "response\ny" | sudo dnf install vitables
-echo -e "response\ny" | sudo dnf install graphviz
-echo -e "response\ny" | sudo dnf install graphviz-devel
-
-# For dakota
-echo -e "response\ny" | sudo dnf install boost
-echo -e "response\ny" | sudo dnf install boost-devel
-echo -e "response\ny" | sudo dnf install lapack-devel
-echo -e "response\ny" | sudo dnf install blas
-
-# For openmc
-echo -e "response\ny" | sudo dnf install gcc-gfortran
-echo -e "response\ny" | sudo dnf install gcc-c++
-echo -e "response\ny" | sudo dnf install cmake
-echo -e "response\ny" | sudo dnf install mpich
-echo -e "response\ny" | sudo dnf install mpich-devel
-echo -e "response\ny" | sudo dnf install libxml2-devel
-echo -e "response\ny" | sudo dnf install libxslt-devel
+# ners-am-08: 141.212.172.88
+# ners-am-12: 141.212.172.92
 
 ####################
 # Git Configurations
@@ -89,143 +45,15 @@ git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vi
 # Personal Git Repositories
 ###########################
 
-git clone https://github.com/bdlafleur/openmc-projects ~/Repos/openmc-projects
-git clone https://github.com/bdlafleur/post-process ~/Repos/post-process
-git clone https://github.com/bdlafleur/statistical-inversion ~/Repos/statistical-inversion
-git clone https://github.com/bdlafleur/surrogate-modeling ~/Repos/surrogate-modeling
-git clone https://github.com/bdlafleur/dakota-workspace ~/Repos/dakota-workspace
-git clone https://github.com/bdlafleur/uq-course.git
+git clone https://github.com/bdlafleur/openmc-projects ~/repos/openmc-projects
+git clone https://github.com/bdlafleur/post-process ~/repos/post-process
+git clone https://github.com/bdlafleur/statistical-inversion ~/repos/statistical-inversion
+git clone https://github.com/bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
+git clone https://github.com/bdlafleur/dakota-workspace ~/repos/dakota-workspace
+git clone https://github.com/bdlafleur/uq-course.git ~/repos/uq-course.git
 
 # Other's repos worth having
-git clone https://github.com/fboender/multi-git-status.git
-
-######################
-# Python Configuration
-######################
-
-sudo pip install --upgrade pip
-sudo pip install jupyter
-sudo pip install yml
-sudo pip install tabulate
-sudo pip install jupyterlab
-sudo pip install numpy
-sudo pip install scipy
-sudo pip install matplotlib
-sudo pip install pandas
-sudo pip install pymc3
-sudo pip install pyDOE
-sudo pip install plotly
-sudo pip install pyinstaller
-sudo pip install h5py
-sudo pip install Cython
-sudo pip install chaospy
-sudo pip install pygraphviz
-
-####################################
-####################################
-####################################
-#                                  #
-#                                  #
-# OpenMC installation instructions #
-#                                  #
-#                                  #
-####################################
-####################################
-####################################
-
-# 1) Download required packages for compliling/building (included above)
-
-# 2) Download and congigure HDF5 (do in /opt/)
-#    wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.2/src/hdf5-1.10.2.tar.gz
-#    sudo tar -xzvf hdf5-1.10.2.tar.gz
-#      (Do next two lines only if --enable-parallel, which doesn't work yet)
-#         set -x FC /usr/lib64/mpich/bin/mpif90
-#         set -x CC /usr/lib64/mpich/bin/mpicc
-#    cd hdf5-1.10.2/
-#    sudo ./configure --prefix=/opt/hdf5/1.10.2 --enable-fortran --enable-fortran2003
-#    sudo make -j 8
-#    sudo make test
-#    sudo make install
-#    sudo make check-install
-
-# 3) Clone openmc and compile code
-#    git clone https://github.com/mit-crpg/openmc.git; cd openmc; git checkout v0.9.0; mkdir build
-#    export HDF5_ROOT='/opt/hdf5/1.10.2'
-#	   cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/opt/openmc/v0.9.0
-#    export PYTHONPATH='/opt/openmc/v0.9.0/lib64/python2.7/site-packages/openmc-0.9.0-py2.7-linux-x86_64.egg/'
-#	   sudo make -j 8 -s -C build
-#    ### Go into build/cmake_install.cmake and change PYTHONPATH env variable to lib64
-#    sudo mkdir -p /opt/openmc/v0.9.0/lib64/python2.7/site-packages/
-#	   sudo make -s -C build install
-
-# 4) Download Cross Sections and test the build
-#    cd scripts; python openmc-get-nndc-data; cd ../
-#    make test
-
-# 6) Change the openmc_exec parameter in executor.py
-# 7) Update the OPENMC_CROSS_SECTIONS environment variable.
-#    export OPENMC_CROSS_SECTIONS='/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml'
-
-######################################
-######################################
-######################################
-#                                    #
-#                                    #
-# OpenFoam installation instructions #
-#                                    #
-#                                    #
-######################################
-######################################
-######################################
-
-##########################
-# Installing / configuring
-
-# sudo dnf update
-# curl -fsSL https://get.docker.com/ | sh
-# echo -e "response\ny" | sudo dnf install zypper
-# sudo zypper -n in docker
-# sudo systemctl start docker
-# sudo systemctl enable docker
-# sudo usermod -aG docker blafleur [[[ restart required after this step ]]]
-# sudo sh -c "wget http://dl.openfoam.org/docker/openfoam5-linux -O /usr/bin/openfoam5-linux"
-# sudo chmod 755 /usr/bin/openfoam5-linux
-
-###########################
-# Launching openfoam5-linux
-
-# mkdir -p $HOME/OpenFOAM/${USER}-5.0
-# cd $HOME/OpenFOAM/${USER}-5.0
-# openfoam5-linux
-
-#
-# Testing openfoam5-linux
-
-# mkdir -p $FOAM_RUN
-# cd $FOAM_RUN
-# cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
-# cd pitzDaily
-# blockMesh
-# simpleFoam
-# paraFoam
-
-#####################
-#####################
-#####################
-#
-#
-# MPACT Usage Guide #
-#
-#
-#####################
-#####################
-#####################
-
-# INSTALL INSTRUCTIONS COMING AT A LATER DATE!!!
-
-# Additional Repositories Needed:
-# git clone git@ners-arc-05.engin.umich.edu:CASL/VERAInExt.git
-# git clone git@ners-arc-05.engin.umich.edu:MPACT/MPACT_Extras.git
+git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-status.git
 
 ######################
 ######################
