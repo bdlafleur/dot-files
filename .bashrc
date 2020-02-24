@@ -108,3 +108,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Host specific actions.
+if [ "$HOSTNAME" = "ners-am-12" ]; then
+    export TERM=xterm-256color
+    cd /home/scratch/blafleur
+fi
+
