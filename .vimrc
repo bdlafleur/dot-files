@@ -1,4 +1,3 @@
-" Get pluggin manager initialized.
 execute pathogen#infect()
 
 " For proper filetype highlighting.
@@ -12,7 +11,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['flake8']
 
 " For my color scheme.
-colorscheme angr
+colorscheme srcery
 
 " Leader for custom namespace commands (not used yet).
 let mapleader =","
@@ -29,7 +28,7 @@ set hlsearch
 
 " Basic spacing settings.
 set textwidth=80
-set wrap
+set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -65,3 +64,9 @@ map <S-j> :bn<CR>
 "so /home/blafleur/.vim/scripts.vim
 "so /home/blafleur/.vim/ftplugin/verainput.vim
 "so /home/blafleur/.vim/autoload/verainputcomplete.vim
+
+" So I don't have to type as much
+command! PQ call Embed()
+function! Embed()
+   normal! Ofrom IPython import embed; embed()
+endfunction

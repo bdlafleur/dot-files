@@ -22,6 +22,7 @@ export PATH="/opt/dakota/6.8/bin/:/opt/dakota/6.8/share/dakota/test/:$PATH"
 alias update='source ~/.bashrc'
 alias config='/usr/bin/git --git-dir="$HOME"/.cfg/ --work-tree="$HOME"'
 alias l='ls -ltr'
+alias ls='ls -ltr'
 alias tre='tree -shC -L 2'
 
 # Pretty git log print in terminal
