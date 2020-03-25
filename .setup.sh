@@ -6,7 +6,7 @@ echo "                    Set Up Dot Files                     "
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 # Clone dot files, and place them in the appropriate places.
-git clone --bare git@github.com:bdlafleur/bdlafleur/dot-files.git $HOME/.cfg
+git clone --bare git@github.com:bdlafleur/dot-files.git $HOME/.cfg
 mkdir -p .config_backup
 [ -f .bashrc ] && mv .bashrc .config_backup
 [ -f .vimrc ] && mv .vimrc .config_backup
@@ -33,15 +33,15 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "              Clone Project Repositories                 "
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
-git clone git@github.com:bdlafleur/bdlafleur/dakota-workspace ~/repos/dakota-workspace
-git clone git@github.com:bdlafleur/bdlafleur/forward-prop.git ~/repos/forward-prop
-git clone git@github.com:bdlafleur/bdlafleur/mpact-projects.git ~/repos/mpact-projects
-git clone git@github.com:bdlafleur/bdlafleur/neural-networking.git ~/repos/neural-networking
-git clone git@github.com:bdlafleur/bdlafleur/openmc-projects ~/repos/openmc-projects
-git clone git@github.com:bdlafleur/bdlafleur/post-process ~/repos/post-process
-git clone git@github.com:bdlafleur/bdlafleur/reduced-order-modeling.git ~/repos/reduced-order-modeling
-git clone git@github.com:bdlafleur/bdlafleur/statistical-inversion ~/repos/statistical-inversion
-git clone git@github.com:bdlafleur/bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
+git clone git@github.com:bdlafleur/dakota-workspace ~/repos/dakota-workspace
+git clone git@github.com:bdlafleur/forward-prop.git ~/repos/forward-prop
+git clone git@github.com:bdlafleur/mpact-projects.git ~/repos/mpact-projects
+git clone git@github.com:bdlafleur/neural-networking.git ~/repos/neural-networking
+git clone git@github.com:bdlafleur/openmc-projects ~/repos/openmc-projects
+git clone git@github.com:bdlafleur/post-process ~/repos/post-process
+git clone git@github.com:bdlafleur/reduced-order-modeling.git ~/repos/reduced-order-modeling
+git clone git@github.com:bdlafleur/statistical-inversion ~/repos/statistical-inversion
+git clone git@github.com:bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
 
 # Other's repos worth having
 git clone git@github.com:fboender/multi-git-status.git ~/repos/multi-git-status
