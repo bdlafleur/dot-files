@@ -24,6 +24,9 @@ alias config='/usr/bin/git --git-dir="$HOME"/.cfg/ --work-tree="$HOME"'
 alias l='ls -ltr'
 alias ls='ls -ltr'
 alias tre='tree -shC -L 2'
+alias ssh07='ssh 141.212.172.87'
+alias ssh08='ssh 141.212.172.88'
+alias ssh12='ssh 141.212.172.92'
 
 # Pretty git log print in terminal
 alias gl='git log --color --graph --pretty=format:'"'"'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
