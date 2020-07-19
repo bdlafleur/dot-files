@@ -143,3 +143,16 @@ if [ "$HOSTNAME" = "ners-am-12" ]; then
     unset __conda_setup
 fi
 
+if [ "$HOSTNAME" = "sawtooth1" ]; then
+    __conda_setup="$('/home/laflbran/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/laflbran/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/laflbran/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/laflbran/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+fi
