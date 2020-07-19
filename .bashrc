@@ -144,6 +144,13 @@ if [ "$HOSTNAME" = "ners-am-12" ]; then
 fi
 
 if [ "$HOSTNAME" = "sawtooth1" ]; then
+    cd
+    mgitstatus -f
+    [[ -z $(config status -s) ]] || printf "Config directory: \033[1;31mDirty\033[0m\n"
+    [[ -n $(config status -s) ]] || printf "Config directory: \033[1;32mOk\033[0m\n"
+    cd - 2>&1 > /dev/null
+    rm ~/repos/*/.git/index.lock
+
     __conda_setup="$('/home/laflbran/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
