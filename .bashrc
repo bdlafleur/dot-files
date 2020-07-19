@@ -3,6 +3,12 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+# For running vera
+if [ $HOSTNAME == "sawtooth1" ]; then
+    source /projects/vera-cs-user/setenv.sh
+    export PBS_EMAIL=blafleur@umich.edu
+fi
+
 #########################
 # ENVIRONMENT VARIABLES #
 #########################
@@ -25,8 +31,8 @@ export PATH="/home/blafleur_local/opt/m4-1.4.17/bin/:$PATH"
 
 alias update='source ~/.bashrc'
 alias config='/usr/bin/git --git-dir="$HOME"/.cfg/ --work-tree="$HOME"'
-alias l='ls -ltr'
-alias ls='ls -ltr'
+alias l='ls -ltr --color="auto"'
+alias ls='ls -l --color="auto"'
 alias tre='tree -shC -L 2'
 alias ssh07='ssh 141.212.172.87'
 alias ssh08='ssh 141.212.172.88'
