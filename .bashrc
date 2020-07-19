@@ -127,7 +127,8 @@ if [ "$HOSTNAME" = "ners-am-12" ]; then
     [[ -z $(config status -s) ]] || printf "Config directory: \033[1;31mDirty\033[0m\n"
     [[ -n $(config status -s) ]] || printf "Config directory: \033[1;32mOk\033[0m\n"
     cd - 2>&1 > /dev/null
-    cd ../
+    cd /home/scratch/blafleur
+    rm repos/*/.git/index.lock
 
     __conda_setup="$('/home/blafleur_local/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
