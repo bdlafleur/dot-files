@@ -6,7 +6,7 @@ echo "                    Set Up Dot Files                     "
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 # Clone dot files, and place them in the appropriate places.
-git clone --bare https://github.com/bdlafleur/dot-files.git $HOME/.cfg
+git clone --bare git@github.com:bdlafleur/dot-files.git $HOME/.cfg
 mkdir -p .config_backup
 [ -f .bashrc ] && mv .bashrc .config_backup
 [ -f .vimrc ] && mv .vimrc .config_backup
@@ -22,29 +22,29 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim http://tpo.pe/pathogen.vim
 
-git clone http://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree/
-git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar/
-git clone https://github.com/bling/vim-airline ~/.vim/bundle/airline/
-git clone https://github.com/flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
-git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
-git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
+git clone git@github.com:scrooloose/nerdtree.git ~/.vim/bundle/nerdtree/
+git clone git@github.com:majutsushi/tagbar.git ~/.vim/bundle/tagbar/
+git clone git@github.com:bling/vim-airline ~/.vim/bundle/airline/
+git clone git@github.com:flazz/vim-colorschemes.git ~/.vim/bundle/colorschemes/
+git clone git@github.com:ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
+git clone git@github.com:vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "              Clone Project Repositories                 "
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
-git clone https://github.com/bdlafleur/dakota-workspace ~/repos/dakota-workspace
-git clone https://github.com/bdlafleur/forward-prop.git ~/repos/forward-prop
-git clone https://github.com/bdlafleur/mpact-projects.git ~/repos/mpact-projects
-git clone https://github.com/bdlafleur/neural-networking.git ~/repos/neural-networking
-git clone https://github.com/bdlafleur/openmc-projects ~/repos/openmc-projects
-git clone https://github.com/bdlafleur/post-process ~/repos/post-process
-git clone https://github.com/bdlafleur/reduced-order-modeling.git ~/repos/reduced-order-modeling
-git clone https://github.com/bdlafleur/statistical-inversion ~/repos/statistical-inversion
-git clone https://github.com/bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
+git clone git@github.com:bdlafleur/dakota-workspace ~/repos/dakota-workspace
+git clone git@github.com:bdlafleur/forward-prop.git ~/repos/forward-prop
+git clone git@github.com:bdlafleur/mpact-projects.git ~/repos/mpact-projects
+git clone git@github.com:bdlafleur/neural-networking.git ~/repos/neural-networking
+git clone git@github.com:bdlafleur/openmc-projects ~/repos/openmc-projects
+git clone git@github.com:bdlafleur/post-process ~/repos/post-process
+git clone git@github.com:bdlafleur/reduced-order-modeling.git ~/repos/reduced-order-modeling
+git clone git@github.com:bdlafleur/statistical-inversion ~/repos/statistical-inversion
+git clone git@github.com:bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
 
 # Other's repos worth having
-git clone https://github.com/fboender/multi-git-status.git ~/repos/multi-git-status
+git clone git@github.com:fboender/multi-git-status.git ~/repos/multi-git-status
 cd ~/repos/multi-git-status
 sudo ./install.sh
 cd
