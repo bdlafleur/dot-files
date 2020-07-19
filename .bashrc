@@ -105,10 +105,12 @@ function repostat {
     [[ -n $(config status -s) ]] || printf "Config directory: \033[1;32mOk\033[0m\n"
     cd - 2>&1 > /dev/null
 }
-repostat
 
 # >>> conda initialize >>>
 if [ "$HOSTNAME" = "DESKTOP-3N8OCFA" ]; then
+    cd
+    repostat
+
     __conda_setup="$('/home/blafleur/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
@@ -117,8 +119,14 @@ if [ "$HOSTNAME" = "DESKTOP-3N8OCFA" ]; then
             . "/home/blafleur/anaconda3/etc/profile.d/conda.sh"
         else
             export PATH="/home/blafleur/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+fi
 
 if [ "$HOSTNAME" = "ners-am-12" ]; then
+    cd
+    repostat
     export TERM=xterm-256color
     cd /home/scratch/blafleur
 
