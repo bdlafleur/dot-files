@@ -94,19 +94,19 @@ function repostat {
 repostat
 
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/blafleur/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/blafleur/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/blafleur/anaconda3/etc/profile.d/conda.sh"
+if [ "$HOSTNAME" = "DESKTOP-3N8OCFA" ]; then
+    __conda_setup="$('/home/blafleur/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/home/blafleur/anaconda3/bin:$PATH"
+        if [ -f "/home/blafleur/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/blafleur/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/blafleur/anaconda3/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Host specific actions.
 if [ "$HOSTNAME" = "ners-am-12" ]; then
