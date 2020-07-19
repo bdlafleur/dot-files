@@ -13,12 +13,12 @@ fi
 # ENVIRONMENT VARIABLES #
 #########################
 
-# Set default shell editor
 export EDITOR='vim'
 export MPACT_DATA="~/mpact/MPACT_Extras/xslibs/mpact51g_71_4.3m2_03262018.fmt"
 export OPENMC_CROSS_SECTIONS="/home/blafleur/Repos/openmc/scripts/nndc_hdf5/cross_sections.xml"
 export PATH="/opt/openmc/v0.9.0/bin/:$PATH"
 export PATH="/opt/dakota/6.8/bin/:/opt/dakota/6.8/share/dakota/test/:$PATH"
+export PATH="~/.local/bin/:$PATH"
 
 # For ners-am-07 mpact configs.
 export MODULEPATH="/home/blafleur_local/opt/mpact-dev-tools/env/:$MODULEPATH"
@@ -97,19 +97,13 @@ if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
 
-# Run mgitstatus and config status to see how all repos are doing.
-function repostat {
+# >>> conda initialize >>>
+if [ "$HOSTNAME" = "DESKTOP-3N8OCFA" ]; then
     cd
     mgitstatus -f
     [[ -z $(config status -s) ]] || printf "Config directory: \033[1;31mDirty\033[0m\n"
     [[ -n $(config status -s) ]] || printf "Config directory: \033[1;32mOk\033[0m\n"
     cd - 2>&1 > /dev/null
-}
-
-# >>> conda initialize >>>
-if [ "$HOSTNAME" = "DESKTOP-3N8OCFA" ]; then
-    cd
-    repostat
 
     __conda_setup="$('/home/blafleur/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
@@ -125,10 +119,15 @@ if [ "$HOSTNAME" = "DESKTOP-3N8OCFA" ]; then
 fi
 
 if [ "$HOSTNAME" = "ners-am-12" ]; then
-    cd
-    repostat
     export TERM=xterm-256color
-    cd /home/scratch/blafleur
+
+    # Check the repostatuses
+    cd /home/scratch/blafleur/repos
+    mgitstatus -f
+    [[ -z $(config status -s) ]] || printf "Config directory: \033[1;31mDirty\033[0m\n"
+    [[ -n $(config status -s) ]] || printf "Config directory: \033[1;32mOk\033[0m\n"
+    cd - 2>&1 > /dev/null
+    cd ../
 
     __conda_setup="$('/home/blafleur_local/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then

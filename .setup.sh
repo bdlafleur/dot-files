@@ -46,7 +46,7 @@ git clone git@github.com:bdlafleur/surrogate-modeling ~/repos/surrogate-modeling
 # Other's repos worth having
 git clone git@github.com:fboender/multi-git-status.git ~/repos/multi-git-status
 cd ~/repos/multi-git-status
-sudo ./install.sh
+PREFIX=~/.local ./install.sh
 cd
 
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
